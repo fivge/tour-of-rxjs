@@ -1,0 +1,18 @@
+{
+  "name": "ts-starter",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc",
+    "clean": "rm -rf dist",
+    "build:dev": "tsc --build tsconfig.json -w",
+    "build:prod": "rm -rf dist && tsc --build tsconfig.json",
+    "start": "clear && node dist/main.js"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.4"
+  },
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
