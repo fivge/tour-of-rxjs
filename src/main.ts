@@ -1,5 +1,3 @@
-export * from "./module";
-
 import { Rxjs1 as Rxjs } from "./module/rxjs.1";
 
 export class Main {
