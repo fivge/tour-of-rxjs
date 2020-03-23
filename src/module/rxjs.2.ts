@@ -6,7 +6,7 @@
  * <https://rxjs-cn.github.io/learn-rxjs-operators/operators/transformation/switchmap.html>
  */
 import { timer, interval, from, of, SchedulerLike } from "rxjs";
-import { switchMap, map, mapTo, mergeMap, delay } from "rxjs/operators";
+import { switchMap, map, mapTo, mergeMap, delay, take } from "rxjs/operators";
 
 /** map() */
 export class Rxjs2 {
@@ -47,7 +47,8 @@ export class Rxjs2 {
   private delayDemon = () => {
     const source = from([0, 1, 3, 5]).pipe(mergeMap((val, index) => of(val).pipe(delay(5000 * index))));
     // interval(300).pipe(mapTo('aaa'))
-    const example = source.pipe(switchMap(val => interval(3000).pipe(mapTo(`i: ${val * 10}`))));
+    const example = source.pipe(switchMap(val => interval(3000).pipe(take(3))));
+    // const example = source.pipe(switchMap(val => interval(3000).pipe(mapTo(`i: ${val * 10}`))));
 
     // const getHero = id => `0x${id}`;
     // 输出: 11,12,13,14,15
