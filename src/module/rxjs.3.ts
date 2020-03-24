@@ -1,7 +1,9 @@
 import { interval } from "rxjs";
 import { mapTo } from "rxjs/operators";
 
-export class Rxjs3 {
+import { Rxjs } from "./rxjs";
+
+export class Rxjs3 implements Rxjs {
   main() {
     this.intervalValue();
   }

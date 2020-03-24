@@ -8,8 +8,10 @@
 import { timer, interval, from, of, SchedulerLike } from "rxjs";
 import { switchMap, map, mapTo, mergeMap, delay, take } from "rxjs/operators";
 
+import { Rxjs } from "./rxjs";
+
 /** map() */
-export class Rxjs2 {
+export class Rxjs2 implements Rxjs {
   main() {
     // this.funSwitchMap();
     // this.funSwitchMapFrom();

@@ -6,8 +6,10 @@
 import { from, of } from "rxjs";
 import { map } from "rxjs/operators";
 
+import { Rxjs } from "./rxjs";
+
 /** map() */
-export class Rxjs1 {
+export class Rxjs1 implements Rxjs {
   main() {
     this.funMapFrom();
     this.funMapOf();
