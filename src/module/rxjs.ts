@@ -1,3 +1,3 @@
 export interface Rxjs {
-  main(): void;
+  main(...args: any[]): void;
 }
