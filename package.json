@@ -7,12 +7,23 @@
     "clean": "rm -rf dist",
     "build:dev": "tsc --build tsconfig.json -w",
     "build:prod": "rm -rf dist && tsc --build tsconfig.json",
-    "start": "clear && node dist/main.js"
+    "start": "clear && node dist/main.js",
+    "dev:brower": "rollup -c -w",
+    "build:brower": "rimraf public && cross-env NODE_ENV=production rollup -c",
+    "start:brower": "serve public"
   },
   "dependencies": {
+    "@reactivex/rxjs": "^6.5.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "rxjs": "^6.5.4"
   },
   "devDependencies": {
+    "@types/react": "^16.9.25",
+    "@types/react-dom": "^16.9.5",
+    "cross-env": "^7.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.3.1",
     "typescript": "^3.8.3"
   }
 }
