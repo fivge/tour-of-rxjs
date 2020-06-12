@@ -7,7 +7,7 @@
     "clean": "rm -rf dist",
     "build:dev": "tsc --build tsconfig.json -w",
     "build:prod": "rm -rf dist && tsc --build tsconfig.json",
-    "build:web": "rm -rf public && mkdir public && cp src/index.html public/ && rollup -c",
+    "build:web": "rm -rf public && mkdir public && rollup -c",
     "start": "clear && node dist/main.js"
   },
   "dependencies": {
