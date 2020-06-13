@@ -21,3 +21,8 @@ cd public && serve
 - of from
 - operators: map()
 - javascript: array.map()
+
+##### 2
+
+- interval timer
+- operators: switchMap()
