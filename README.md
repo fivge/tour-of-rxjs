@@ -26,3 +26,7 @@ cd public && serve
 
 - interval timer
 - operators: switchMap()
+
+##### 3
+
+- operators: mapTo() delay()
