@@ -1,4 +1,4 @@
-import { Rxjs1 as Rxjs } from "./module/rxjs.1";
+import { Rxjs3 as Rxjs } from './module/rxjs.3';
 
 export class Main {
   private rxjs = new Rxjs();

@@ -29,4 +29,4 @@ cd public && serve
 
 ##### 3
 
-- operators: mapTo() delay()
+- operators: mapTo() delay() tap()

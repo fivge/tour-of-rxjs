@@ -8,26 +8,21 @@
  * - 如果输入值没有变化，则不要发起请求（比如按某个字符，然后快速按退格）。
  * - 如果已发出的 AJAX 请求的结果会因为后续的修改而变得无效，那就取消它。
  */
-import { fromEvent } from "rxjs";
-import { ajax } from "rxjs/ajax";
-import {
-  debounceTime,
-  distinctUntilChanged,
-  filter,
-  map,
-  switchMap,
-} from "rxjs/operators";
+import { fromEvent } from 'rxjs';
+import { ajax } from 'rxjs/ajax';
+import { debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 
-const searchBox = document.getElementById("search-box");
+const searchBox = document.getElementById('search-box');
 
-const typeahead = fromEvent(searchBox, "input").pipe(
-  map((e) => e.target.value),
-  filter((text) => text.length > 2),
+const typeahead = fromEvent(searchBox, 'input').pipe(
+  map(e => e.target.value),
+  filter(text => text.length > 2),
   debounceTime(0.5 * 1000),
   distinctUntilChanged(),
-  switchMap(() => ajax("https://random-word-api.herokuapp.com/word?number=10"))
+  switchMap(() => ajax('https://random-word-api.herokuapp.com/word?number=10'))
 );
 
-typeahead.subscribe((data) => {
+typeahead.subscribe(data => {
   // Handle the data from the API
+  console.log(data);
 });
